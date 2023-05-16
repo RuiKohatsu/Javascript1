@@ -25,5 +25,7 @@ public class Main {
 
         var delete = productService.delete(104);
         System.out.println(delete + "件のレコードを削除しました");
+
+        productService.close();
     }
 }

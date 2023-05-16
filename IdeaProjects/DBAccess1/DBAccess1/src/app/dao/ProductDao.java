@@ -82,5 +82,9 @@ public class ProductDao {
         return 1;
     }
 
+    public void close() throws SQLException{
+        this.connection.close();
+    }
+
 
 }

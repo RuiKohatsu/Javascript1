@@ -16,7 +16,7 @@ public class ProductService {
         this.productDao = new ProductDao(connection);
     }
 
-    public ProductRecord findById(int id) throws ProductNotFoundException{
+    public ProductRecord findById(int id){
         var product =  productDao.findById(id);
         if(product == null) {
             throw new ProductNotFoundException();
@@ -62,6 +62,14 @@ public class ProductService {
         } catch (SQLException e) {
             e.printStackTrace();
             return 0;
+        }
+    }
+
+    public void close(){
+        try {
+            productDao.close();
+        }catch(SQLException e){
+            e.printStackTrace();
         }
     }
 
