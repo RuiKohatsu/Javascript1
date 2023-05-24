@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学習</title>
+</head>
+<body>
+    <p>Hello</p>
+    <script>
+        'use strict'; //構文のチェック
+        // アラートで「Hello JavaScript」が表示される
+        //windowはブラウザを表すオブジェクト
+        //javaと違い、JSはもとからあるオブジェクトを使う window document consoleなど
+        //window.alert('Hello JavaScript');
+
+        //コンソール(ディベロッパーツール)のログに表示する
+        console.log('Hello JavaScript');
+
+        var greet1 = 'Good Morning';  //使っちゃダメ
+
+        let greet2 = 'Hello';       //変数の宣言　
+        const greet3 = 'Bye';       //定数の宣言 一番よく使う 値が変わらないから読みやすい
+
+        console.log(greet1); // Good Morning
+        console.log(greet2); // Hello
+        console.log(greet3); // Bye
+
+        // varとletで宣言した変数は再代入可能
+        //greet1 = 'おはよう';
+        //greet2 = 'こんにちは';
+
+        console.log('文字列1'); // 文字列1
+        console.log("文字列2"); // 文字列2
+      
+        console.log(200); // 200
+        console.log(20.5); // 20.5
+
+        const name = 'Alice';
+
+        console.log(`Hello ${Alice}`);  //テンプレートリテラル：バッククォートと${}で変数を埋め込むことができる
+
+        console.log(1 + 2); // 3
+        // 減算
+        console.log(10 - 5); // 5
+        // 乗算
+        console.log(3 * 3); // 9
+        // 除算
+        console.log(10 / 4); // 2.5　　型の制約が緩いので普通に少数で答えが出る
+        // 剰余(除算の余り)
+        console.log(10 % 3); // 1
+        // べき乗
+        console.log(2 ** 3); // 8
+
+        console.log("Hello" + " World");
+
+        console.log(100 === 100);   // true
+        // 型が異なればfalseになる
+        console.log(100 === '100'); // false
+
+        console.log(100 == 100);   // true
+        // 型が異なってもtrue
+        console.log(100 == '100'); // true
+
+        console.log(100 !== '100') // true
+        console.log(100 != '100')  // false
+
+        let fruits = ['いちご', 'みかん', 'ぶどう'];
+        // 添え字は0から始まる
+        console.log(fruits[0]);  // いちご
+        console.log(fruits[1]);  // みかん
+        console.log(fruits[2]);  // ぶどう
+        console.log(fruits);     // 全て表示
+
+        // 定義されていない要素はundefinedとなる
+        //問い合わせても何も得られなかったときはnullが返ってくる
+        console.log(fruits[3]);  // undefined
+        console.log(fruits[-1]); // undefined
+
+        // for...of
+        // (let 変数名 of 配列名) とすることで、変数に各要素が格納されながらループ処理できる
+        for(let fruit of fruits) {
+            console.log(fruit);
+        }
+
+        const user = {
+    name: 'Alice',
+    age: 20,
+    };
+    // オブジェクトへのアクセス
+    console.log(user.name);
+    console.log(user['name']);
+    // 値の変更
+    user.age = 23;
+    // user['age'] = 23; // これでもいい
+    console.log(user.age);
+    // 要素を追加
+    user.email = 'alice@xxx.co.jp';
+    // user['email'] = 'alice@xxx.co.jp'; // これでもいい
+    console.log(user.email);
+
+    // 基本形
+    function add(n, m) {
+    return n + m;
+    }
+    // 関数呼び出し
+    let sum = add(10, 20);
+    console.log(sum);  // 30
+
+    // アロー式
+    const multi = (n, m) => {
+        return n * m;
+    }
+
+    //関数に引数として入れられる
+    // 関数呼び出し
+    let ans = multi(20, 3);
+    console.log(ans);  // 60
+
+    const getHighScore = (score) =>{
+        if(score >= 80){
+            return true;
+        }else{
+            false;
+        }
+    }
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
